@@ -1,0 +1,166 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ad3955;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ad3955;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background: #191919;
+  overflow: hidden;
+}
+
+.parallax {
+  width: 100%;
+  height: 100%;
+}
+.parallax img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+.parallax > img {
+  filter: blur(2px);
+}
+.agumented-ui {
+  position: absolute;
+  left: 0;
+  bottom: 4rem;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+.ui {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  gap: 5rem;
+}
+.agumented-ui .sidebar {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem 0.25rem;
+  border-radius: 3rem;
+  box-shadow: 2px 2px 8px rgba(155, 155, 155),
+    inset 2px 2px 8px rgba(255, 255, 255);
+  width: 2.5rem;
+  height: fit-content;
+  margin: auto 0;
+}
+.agumented-ui .sidebar svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  cursor: pointer;
+  color: #555;
+}
+.agumented-ui .sidebar svg.selected {
+  color: #fff;
+}
+.selector {
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
+  width: 2rem;
+  height: 2rem;
+  background: rgba(135, 135, 135);
+  box-shadow: 2px 2px 8px rgba(95, 95, 95),
+    inset 2px 2px 8px rgba(175, 175, 175);
+  border-radius: 50%;
+}
+.agumented-ui .icons {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+.agumented-ui .icons .row {
+  display: flex;
+  justify-content: center;
+  gap: 3.5rem;
+}
+.agumented-ui .icons .row .app {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: #ccc;
+  box-shadow: 2px 2px 8px #777, inset 2px 2px 8px #eee;
+  padding: 0.5rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.agumented-ui .icons .row .app img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.logo-wrapper {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  animation: fade-in 0.8s linear forwards;
+}
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+.logo {
+  width: 3rem;
+  height: auto;
+  color: #fff;
+}
+.circle {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  stroke-dasharray: 52;
+  stroke-dashoffset: 40;
+  animation: rotate 3s linear infinite;
+  filter: drop-shadow(0px 0px 6px #fff);
+}
+@keyframes rotate {
+  from {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+  to {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
